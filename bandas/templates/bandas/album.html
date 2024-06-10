@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ album.titulo }} - {{ album.banda.nome }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center; /* Centralizar conteúdo */
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        h1::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: #333;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .info-label {
+            font-weight: bold;
+        }
+        .info-value {
+            margin-left: 10px;
+            color: #555;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        li a:hover {
+            text-decoration: underline;
+        }
+        .album-image img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Para centralizar a imagem */
+            margin: 0 auto; /* Para centralizar a imagem */
+        }
+        .actions {
+            margin-top: 20px;
+        }
+        .actions a {
+            display: inline-block;
+            margin-right: 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            h1::after {
+                width: 30px;
+            }
+            .actions {
+                margin-top: 10px;
+            }
+            .album-image img {
+                margin-top: 15px; /* Espaçamento superior para a imagem em telas menores */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ album.titulo }}</h1>
+        {% if album.imagem %}
+            <div class="album-image">
+                <img src="{{ album.imagem.url }}" alt="Capa do álbum">
+            </div>
+        {% else %}
+            <p>Imagem não disponível</p>
+        {% endif %}
+        <p><span class="info-label">Ano de lançamento:</span><span class="info-value">{{ album.ano_lancamento }}</span></p>
+        <h2>Lista de músicas do álbum:</h2>
+        <ul>
+            {% for musica in musicas %}
+                <li><a href="{% url 'bandas:musica' musica.titulo %}">{{ musica.titulo }}</a></li>
+            {% endfor %}
+        </ul>
+         <div class="actions">
+            {% if user.is_authenticated %}
+                <a href="{% url 'bandas:album_editar' album.pk %}">Editar Álbum</a>
+                <a href="{% url 'bandas:album_remover' album.pk %}">Remover Álbum</a>
+                <a href="{% url 'bandas:musica_adicionar' banda_nome=banda_nome album_titulo=album.titulo %}">Adicionar Música</a>
+            {% endif %}
+        </div>
+        <ul>
+            <li><a href="{% url 'bandas:banda' album.banda.nome %}">Voltar para {{ album.banda.nome }}</a></li>
+        </ul>
+    </div>
+</body>
+</html>

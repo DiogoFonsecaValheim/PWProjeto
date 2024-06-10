@@ -1,0 +1,32 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}Home - Portfolio{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+            <div class="login">
+                <p>Logado como {{ user.username }}</p>
+                <form action="{% url 'portfolio:logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Sair</button>
+                </form>
+            </div>
+        {% else %}
+            <div class="login">
+                <p><a href="{% url 'portfolio:login' %}">Faça login</a> para continuar</p>
+            </div>
+        {% endif %}
+    <h1>Bem-vindo ao meu Portfolio</h1>
+    <img src="/static/portfolio/eu.jpg.optimal.jpg" alt="Minha Foto" width="220" height="200">
+    <p><strong>Nome:</strong> {{ personal_info.name }}</p>
+    <p><strong>Email:</strong> {{ personal_info.email }}</p>
+    <p><strong>Telefone:</strong> {{ personal_info.phone }}</p>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="https://www.instagram.com/d100g0" target="_blank" style="text-decoration: none;">
+            <button style="padding: 10px 20px; font-size: 16px; background-color: #E1306C; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                Instagram
+            </button>
+        </a>
+    </div>
+    <p><strong>Bio:</strong> {{ personal_info.bio }}</p>
+{% endblock %}

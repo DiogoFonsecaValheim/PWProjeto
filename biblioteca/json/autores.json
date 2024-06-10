@@ -1,0 +1,37 @@
+{
+  "José Saramago": {
+    "nacionalidade": "Portuguesa",
+    "ano_nascimento": 1922,
+    "ano_falecimento": 2010
+  },
+  "Machado de Assis": {
+    "nacionalidade": "Brasileira",
+    "ano_nascimento": 1839,
+    "ano_falecimento": 1908
+  },
+  "Manuel Alegre": {
+    "nacionalidade": "Portuguesa",
+    "ano_nascimento": 1936,
+    "ano_falecimento": null
+  },
+  "José Mauro de Vasconcelos": {
+    "nacionalidade": "Brasileira",
+    "ano_nascimento": 1920,
+    "ano_falecimento": 1984
+  },
+  "John Green": {
+    "nacionalidade": "Americana",
+    "ano_nascimento": 1977,
+    "ano_falecimento": null
+  },
+  "Jorge Amado": {
+    "nacionalidade": "Brasileira",
+    "ano_nascimento": 1912,
+    "ano_falecimento": 2001
+  },
+  "José de Alencar": {
+    "nacionalidade": "Brasileira",
+    "ano_nascimento": 1829,
+    "ano_falecimento": 1877
+  }
+}

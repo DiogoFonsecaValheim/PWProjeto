@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerir Ratings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .rating {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .rating p {
+            margin: 0;
+        }
+        .rating-buttons {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gerir Ratings - {{ artigo.titulo }}</h1>
+    </header>
+    <div class="container">
+        {% for rating in ratings %}
+        <div class="rating">
+            <p><strong>Usuário:</strong> {{ rating.user.username }}</p>
+            <p><strong>Artigo:</strong> {{ rating.post.titulo }}</p>
+            <p><strong>Valor do Rating:</strong> {{ rating.valor }}</p>
+            <div class="rating-buttons">
+                <a href="{% url 'artigos:editar_rating' rating.user.username %}">Editar Rating</a>
+                <a href="{% url 'artigos:remover_rating' rating.id %}">Remover Rating</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

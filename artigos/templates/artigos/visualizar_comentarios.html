@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentários do Post</title>
+</head>
+<body>
+    <h1>Comentários do Post "{{ post.titulo }}"</h1>
+    {% for comentario in comentarios %}
+    <div>
+        <p>Nome: {{ comentario.nome }}</p>
+        <p>Comentário: {{ comentario.titulo }}</p>
+        <a href="{% url 'artigos:editar_comentario' comentario.titulo %}">Editar Comentário</a>
+        <a href="{% url 'artigos:remover_comentario' comentario.titulo %}">Remover Comentário</a>
+    </div>
+    {% endfor %}
+    <a href="{% url 'artigos:artigos' %}">Voltar para Artigos</a>
+</body>
+</html>

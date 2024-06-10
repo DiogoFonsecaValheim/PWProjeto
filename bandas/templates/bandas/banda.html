@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ banda.nome }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        h1::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: #333;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .info-label {
+            font-weight: bold;
+        }
+        .info-value {
+            margin-left: 10px;
+            color: #555;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        li a:hover {
+            text-decoration: underline;
+        }
+        .actions {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .actions a {
+            display: inline-block;
+            margin-right: 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ banda.nome }}</h1>
+        <p><span class="info-label">Ano de criação:</span><span class="info-value">{{ banda.ano_criacao }}</span></p>
+        <p><span class="info-label">Nacionalidade:</span><span class="info-value">{{ banda.nacionalidade }}</span></p>
+        <h2>Álbuns:</h2>
+        <ul>
+            {% for album in albuns %}
+                <li><a href=" {% url 'bandas:album' banda_nome=album.banda.nome album_titulo=album.titulo %} ">{{ album.titulo }}</a></li>
+            {% endfor %}
+        </ul>
+            <div class="actions">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'bandas:album_adicionar' %}">Adicionar Álbum</a>
+                    <a href="{% url 'bandas:banda_editar' banda.id %}">Editar Banda</a>
+                    <a href="{% url 'bandas:banda_remover' banda.id %}">Remover Banda</a>
+                {% endif %}
+            </div>
+        <ul>
+            <li><a href="{% url 'bandas:bandas' %}">Voltar para lista de Bandas</a></li>
+        </ul>
+    </div>
+</body>
+</html>

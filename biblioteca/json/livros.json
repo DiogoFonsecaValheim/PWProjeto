@@ -1,0 +1,62 @@
+[
+  {
+    "titulo": "Memorial do Convento",
+    "autor": "José Saramago",
+    "genero": "Ficção Histórica",
+    "ano_publicacao": 1982
+  },
+  {
+    "titulo": "Dom Casmurro",
+    "autor": "Machado de Assis",
+    "genero": "Romance",
+    "ano_publicacao": 1899
+  },
+  {
+    "titulo": "Balada de Amor ao Vento",
+    "autor": "Manuel Alegre",
+    "genero": "Poesia",
+    "ano_publicacao": 1967
+  },
+  {
+    "titulo": "O Meu Pé de Laranja Lima",
+    "autor": "José Mauro de Vasconcelos",
+    "genero": "Romance",
+    "ano_publicacao": 1968
+  },
+  {
+    "titulo": "A Culpa É das Estrelas",
+    "autor": "John Green",
+    "genero": "Romance Jovem Adulto",
+    "ano_publicacao": 2012
+  },
+  {
+    "titulo": "Capitães da Areia",
+    "autor": "Jorge Amado",
+    "genero": "Romance",
+    "ano_publicacao": 1937
+  },
+  {
+    "titulo": "Ensaio sobre a Cegueira",
+    "autor": "José Saramago",
+    "genero": "Ficção Dystopian",
+    "ano_publicacao": 1995
+  },
+  {
+    "titulo": "O Guarani",
+    "autor": "José de Alencar",
+    "genero": "Romance",
+    "ano_publicacao": 1857
+  },
+  {
+    "titulo": "O Evangelho Segundo Jesus Cristo",
+    "autor": "José Saramago",
+    "genero": "Ficção Histórica",
+    "ano_publicacao": 1991
+  },
+  {
+    "titulo": "O Alienista",
+    "autor": "Machado de Assis",
+    "genero": "Conto",
+    "ano_publicacao": 1882
+  }
+]

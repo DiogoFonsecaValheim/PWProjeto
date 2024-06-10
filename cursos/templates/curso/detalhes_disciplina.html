@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Disciplina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #333;
+            margin: 10px auto;
+            width: 50%;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .button-red {
+            background-color: #dc3545;
+        }
+
+        .button-red:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button-container">
+            <a href="{% url 'cursos:lista_cursos' %}" class="button">Voltar à Página Inicial</a>
+        </div>
+        <h1>{{ disciplina.nome }}</h1>
+        <hr>
+        <p>Ano: {{ disciplina.ano }}</p>
+        <p>Semestre: {{ disciplina.semestre }}</p>
+        <p>Ects: {{ disciplina.ects }}</p>
+        <p>Código: {{ disciplina.code }}</p>
+        <p>Área Científica: {{ disciplina.area_cientifica }}</p>
+        <p>Conteúdos Programáticos: {{ disciplina.conteudos }}</p>
+        <hr>
+        <h2>Projetos Relacionados</h2>
+        <ul>
+            {% for projeto in projetos %}
+                <li><a href="{% url 'cursos:detalhes_projeto' projeto_nome=projeto.nome %}">{{ projeto.nome }}</a></li>
+            {% endfor %}
+        </ul>
+        <hr>
+        {% if user.is_authenticated %}
+        <div class="button-container">
+            <a href="{% url 'cursos:adicionar_projeto' disciplina_nome=disciplina.nome %}" class="button">Adicionar Novo Projeto</a>
+            <a href="{% url 'cursos:editar_disciplina' disciplina_nome=disciplina.nome %}" class="button">Editar Disciplina</a>
+            <a href="{% url 'cursos:remover_disciplina' disciplina_nome=disciplina.nome %}" class="button button-red">Remover Disciplina</a>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

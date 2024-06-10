@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends 'praias/layout.html' %}
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Praia{% endblock %}</title>
+</head>
+<body>
+
+<header>
+    <h1>Praia: {{ praia.nome }}</h1>
+</header>
+
+<main>
+    {% block content %}
+    <section>
+        <h2>Informações:</h2>
+        <img src="{{ praia.imagem.url }}" alt="{{ praia.nome }}">
+
+        <p><strong>Região:</strong> {{ praia.regiao.nome }}</p>
+
+        <p><strong>Serviços Disponíveis:</strong>
+        {% for servico in praia.servicos.all %}
+            {{ servico.nome }}{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+        </p>
+    </section>
+
+    <a href="{% url 'praias:praias' %}">Voltar para Lista de Praias</a>
+    {% endblock %}
+</main>
+
+</body>
+</html>

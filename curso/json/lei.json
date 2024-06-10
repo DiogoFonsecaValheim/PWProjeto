@@ -1,0 +1,256 @@
+{
+  "curso": {
+    "nome": "Engenharia Informática",
+    "apresentacao": "Apresentação do curso de Engenharia Informática.",
+    "objetivos": "Objetivos do curso de Engenharia Informática.",
+    "competencias": "Competências adquiridas no curso de Engenharia Informática."
+  },
+  "areas_cientificas": [
+    {"nome": "Algoritmos e Estruturas de Dados"},
+    {"nome": "Redes de Computadores"},
+    {"nome": "Inteligência Artificial"},
+    {"nome": "Banco de Dados"},
+    {"nome": "Segurança da Informação"},
+    {"nome": "Desenvolvimento Web"},
+    {"nome": "Sistemas Operativos"},
+    {"nome": "Engenharia de Software"},
+    {"nome": "Computação Gráfica"},
+    {"nome": "Aprendizado de Máquina"}
+  ],
+  "disciplinas": [
+    {
+      "nome": "Programação I",
+      "ano": 1,
+      "semestre": 1,
+      "ects": 6,
+      "code": 1234,
+      "area_cientifica": "Algoritmos e Estruturas de Dados",
+      "projetos": [
+        {
+          "nome": "Projeto de Programação I",
+          "descricao": "Descrição do projeto de Programação I.",
+          "conceitos": "Conceitos aplicados no projeto de Programação I.",
+          "tecnologias": "Tecnologias utilizadas no projeto de Programação I.",
+          "foto": "link_para_imagem",
+          "video": "link_para_video",
+          "gitLink": "link_para_repositorio_github",
+          "linguagens": [{"nome": "Python"}, {"nome": "C"}]
+        }
+      ]
+    },
+    {
+      "nome": "Redes de Computadores",
+      "ano": 1,
+      "semestre": 2,
+      "ects": 6,
+      "code": 5678,
+      "area_cientifica": "Redes de Computadores",
+      "projetos": [
+        {
+          "nome": "Projeto de Redes de Computadores",
+          "descricao": "Descrição do projeto de Redes de Computadores.",
+          "conceitos": "Conceitos aplicados no projeto de Redes de Computadores.",
+          "tecnologias": "Tecnologias utilizadas no projeto de Redes de Computadores.",
+          "foto": "link_para_imagem",
+          "video": "link_para_video",
+          "gitLink": "link_para_repositorio_github",
+          "linguagens": [{"nome": "C"}]
+        }
+      ]
+    },
+    {
+      "nome": "Bases de Dados",
+      "ano": 2,
+      "semestre": 1,
+      "ects": 6,
+      "code": 9101,
+      "area_cientifica": "Banco de Dados",
+      "projetos": [
+        {
+          "nome": "Projeto de Bases de Dados",
+          "descricao": "Descrição do projeto de Bases de Dados.",
+          "conceitos": "Conceitos aplicados no projeto de Bases de Dados.",
+          "tecnologias": "Tecnologias utilizadas no projeto de Bases de Dados.",
+          "foto": "link_para_imagem",
+          "video": "link_para_video",
+          "gitLink": "link_para_repositorio_github",
+          "linguagens": [{"nome": "SQL"}]
+        }
+      ]
+    },
+    {
+      "nome": "Introdução à Inteligência Artificial",
+      "ano": 2,
+      "semestre": 1,
+      "ects": 6,
+      "code": 1121,
+      "area_cientifica": "Inteligência Artificial",
+      "projetos": [
+        {
+          "nome": "Projeto de Introdução à IA",
+          "descricao": "Descrição do projeto de Introdução à Inteligência Artificial.",
+          "conceitos": "Conceitos aplicados no projeto de Introdução à Inteligência Artificial.",
+          "tecnologias": "Tecnologias utilizadas no projeto de Introdução à Inteligência Artificial.",
+          "foto": "link_para_imagem",
+          "video": "link_para_video",
+          "gitLink": "link_para_repositorio_github",
+          "linguagens": [{"nome": "Python"}]
+        }
+      ]
+    },
+    {
+      "nome": "Desenvolvimento Web",
+      "ano": 2,
+      "semestre": 2,
+      "ects": 6,
+      "code": 1314,
+      "area_cientifica": "Desenvolvimento Web",
+      "projetos": [
+        {
+          "nome": "Projeto de Desenvolvimento Web",
+          "descricao": "Descrição do projeto de Desenvolvimento Web.",
+          "conceitos": "Conceitos aplicados no projeto de Desenvolvimento Web.",
+          "tecnologias": "Tecnologias utilizadas no projeto de Desenvolvimento Web.",
+          "foto": "link_para_imagem",
+          "video": "link_para_video",
+          "gitLink": "link_para_repositorio_github",
+          "linguagens": [{"nome": "HTML"}, {"nome": "CSS"}, {"nome": "JavaScript"}]
+        }
+      ]
+    },
+    {
+      "nome": "Sistemas Operativos",
+      "ano": 3,
+      "semestre": 1,
+      "ects": 6,
+      "code": 1516,
+      "area_cientifica": "Sistemas Operativos",
+      "projetos": [
+        {
+          "nome": "Projeto de Sistemas Operativos",
+          "descricao": "Descrição do projeto de Sistemas Operativos.",
+          "conceitos": "Conceitos aplicados no projeto de Sistemas Operativos.",
+          "tecnologias": "Tecnologias utilizadas no projeto de Sistemas Operativos.",
+          "foto": "link_para_imagem",
+          "video": "link_para_video",
+          "gitLink": "link_para_repositorio_github",
+          "linguagens": [{"nome": "C"}, {"nome": "Assembly"}]
+        }
+      ]
+    },
+    {
+      "nome": "Engenharia de Software",
+      "ano": 3,
+      "semestre": 2,
+      "ects": 6,
+      "code": 1718,
+      "area_cientifica": "Engenharia de Software",
+      "projetos": [
+        {
+          "nome": "Projeto de Engenharia de Software",
+          "descricao": "Descrição do projeto de Engenharia de Software.",
+          "conceitos": "Conceitos aplicados no projeto de Engenharia de Software.",
+          "tecnologias": "Tecnologias utilizadas no projeto de Engenharia de Software.",
+          "foto": "link_para_imagem",
+          "video": "link_para_video",
+          "gitLink": "link_para_repositorio_github",
+          "linguagens": [{"nome": "Java"}]
+        }
+      ]
+    },
+    {
+      "nome": "Computação Gráfica",
+      "ano": 4,
+      "semestre": 1,
+      "ects": 6,
+      "code": 1920,
+      "area_cientifica": "Computação Gráfica",
+      "projetos": [
+        {
+          "nome": "Projeto de Computação Gráfica",
+          "descricao": "Descrição do projeto de Computação Gráfica.",
+          "conceitos": "Conceitos aplicados no projeto de Computação Gráfica.",
+          "tecnologias": "Tecnologias utilizadas no projeto de Computação Gráfica.",
+          "foto": "link_para_imagem",
+          "video": "link_para_video",
+          "gitLink": "link_para_repositorio_github",
+          "linguagens": [{"nome": "C++"}]
+        }
+      ]
+    },
+    {
+      "nome": "Aprendizado de Máquina",
+      "ano": 4,
+      "semestre": 2,
+      "ects": 6,
+      "code": 2122,
+      "area_cientifica": "Aprendizado de Máquina",
+      "projetos": [
+        {
+          "nome": "Projeto de Aprendizado de Máquina",
+          "descricao": "Descrição do projeto de Aprendizado de Máquina.",
+          "conceitos": "Conceitos aplicados no projeto de Aprendizado de Máquina.",
+          "tecnologias": "Tecnologias utilizadas no projeto de Aprendizado de Máquina.",
+          "foto": "link_para_imagem",
+          "video": "link_para_video",
+          "gitLink": "link_para_repositorio_github",
+          "linguagens": [{"nome": "Python"}]
+        }
+      ]
+    },
+    {
+      "nome": "Projeto Final",
+      "ano": 5,
+      "semestre": 1,
+      "ects": 12,
+      "code": 2324,
+      "area_cientifica": "Engenharia de Software",
+      "projetos": [
+        {
+          "nome": "Projeto Final de Curso",
+          "descricao": "Descrição do projeto final de curso.",
+          "conceitos": "Conceitos aplicados no projeto final de curso.",
+          "tecnologias": "Tecnologias utilizadas no projeto final de curso.",
+          "foto": "link_para_imagem",
+          "video": "link_para_video",
+          "gitLink": "link_para_repositorio_github",
+          "linguagens": [{"nome": "Java"}, {"nome": "Python"}, {"nome": "JavaScript"}, {"nome": "HTML"}, {"nome": "CSS"}]
+        }
+      ]
+    }
+  ],
+  "docentes": [
+    {
+      "nome": "João Silva",
+      "disciplinas": ["Programação I", "Redes de Computadores"]
+    },
+    {
+      "nome": "Maria Santos",
+      "disciplinas": ["Programação I", "Introdução à Inteligência Artificial"]
+    },
+    {
+      "nome": "Pedro Costa",
+      "disciplinas": ["Bases de Dados", "Desenvolvimento Web"]
+    },
+    {
+      "nome": "Ana Oliveira",
+      "disciplinas": ["Sistemas Operativos", "Engenharia de Software"]
+    },
+    {
+      "nome": "Luís Sousa",
+      "disciplinas": ["Computação Gráfica", "Aprendizado de Máquina"]
+    }
+  ],
+  "linguagens_programacao": [
+    {"nome": "Python"},
+    {"nome": "C"},
+    {"nome": "Java"},
+    {"nome": "HTML"},
+    {"nome": "CSS"},
+    {"nome": "JavaScript"},
+    {"nome": "SQL"},
+    {"nome": "C++"},
+    {"nome": "Assembly"},
+    {"nome": "R"}
+  ]
+}

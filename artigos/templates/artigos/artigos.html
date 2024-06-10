@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site de Artigos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .post {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .post h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .post img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .comments {
+            margin-top: 20px;
+        }
+        .comment {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Site de Artigos</h1>
+        {% if user.is_authenticated %}
+            <div class="login">
+                <p>Logado como {{ user.username }}</p>
+                <form action="{% url 'artigos:logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Sair</button>
+                </form>
+                <a href="{% url 'artigos:adicionar_artigo' %}">Adicionar Artigo</a>
+            </div>
+        {% else %}
+            <div class="login">
+                <p><a href="{% url 'artigos:login' %}">Faça login</a> para continuar</p>
+            </div>
+        {% endif %}
+    </header>
+    <div class="container">
+        {% for artigo in artigos %}
+        <div class="post">
+            <h2>{{ artigo.titulo }}</h2>
+            <p>Data de Publicação: {{ artigo.data }}</p>
+            <img src="{{ artigo.foto.url }}" alt="{{ artigo.titulo }}">
+            <p>{{ artigo.texto }}</p> <!-- Adicione este campo -->
+            <div class="comments">
+                <h3>Comentários</h3>
+                {% for comentario in artigo.comen_set.all %}
+                <div class="comment">
+                    <p><strong>{{ comentario.nome }}</strong>: {{ comentario.titulo }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="ratings">
+                <h3>Classificações</h3>
+                <p>Média dos Ratings: {{ artigo.avg_rating }}</p>
+            </div>
+            {% if user.is_authenticated %}
+            <div class="artigo-buttons">
+                <a href="{% url 'artigos:editar_artigo' artigo.id %}">Editar</a>
+                <a href="{% url 'artigos:remover_artigo' artigo.id %}">Remover</a>
+            </div>
+                <a href="{% url 'artigos:adicionar_comentario' post_id=artigo.id %}">Adicionar Comentário</a>
+                <a href="{% url 'artigos:visualizar_comentarios' post_id=artigo.id %}">Gerir Comentários</a>
+                 <div class="rating-buttons">
+                     <a href="{% url 'artigos:adicionar_rating' post_id=artigo.id %}">Adicionar Ratings</a>
+                     <a href="{% url 'artigos:gerir_ratings' artigo.id %}">Gerir Ratings</a>
+                 </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

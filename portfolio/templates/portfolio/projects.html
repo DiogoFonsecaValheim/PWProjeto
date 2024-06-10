@@ -1,0 +1,17 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}Os meus sites - Portfolio{% endblock %}
+
+{% block content %}
+    <h1>Os meus WebSites</h1>
+    <ul>
+        {% for project in projects %}
+            <li>
+                <a href="{{ project.url }}" target="_blank" style="text-decoration: none; color: inherit;">
+                    <h2>{{ project.title }}</h2>
+                    <p>{{ project.description }}</p>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

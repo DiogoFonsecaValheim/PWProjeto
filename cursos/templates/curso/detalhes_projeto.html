@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Projeto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 16px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .button-container {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .button-red {
+            background-color: #dc3545;
+        }
+
+        .button-red:hover {
+            background-color: #c82333;
+        }
+
+        .button-container-centralized {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button-container">
+            <a href="{% url 'cursos:lista_cursos' %}" class="button">Voltar à Página Inicial</a>
+        </div>
+        <h1>{{ projeto.nome }}</h1>
+        <hr>
+        <p>Descrição: {{ projeto.descricao }}</p>
+        <p>Conceitos Aplicados: {{ projeto.conceitos }}</p>
+        <p>Tecnologias Usadas: {{ projeto.tecnologias }}</p>
+        <img src="{{ projeto.foto.url }}" alt="Imagem do Projeto">
+        <p>Link do Vídeo: <a href="{{ projeto.video }}">{{ projeto.video }}</a></p>
+        <p>Link do Repositório GitHub: <a href="{{ projeto.gitLink }}">{{ projeto.gitLink }}</a></p>
+        <hr>
+        <div class="button-container">
+            {% if user.is_authenticated %}
+                <div class="button-container-centralized">
+                    <a href="{% url 'cursos:editar_projeto' projeto_nome=projeto.nome %}" class="button">Editar Projeto</a>
+                    <a href="{% url 'cursos:remover_projeto' projeto_nome=projeto.nome %}" class="button button-red">Remover Projeto</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

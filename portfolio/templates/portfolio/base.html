@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meu Portfolio{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav {
+            width: 100%;
+            background-color: #4CAF50;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f4f4f9;
+        }
+        #dark-mode-toggle {
+            margin: 20px auto; /* Centraliza o botão e define margens */
+            padding: 5px 10px; /* Define o tamanho do botão */
+            cursor: pointer;
+            background-color: #333;
+            color: #f4f4f9;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            display: block; /* Transforma o botão em bloco para centralizar */
+        }
+        #dark-mode-toggle:hover {
+            background-color: #555;
+        }
+        .dark-mode #dark-mode-toggle {
+            background-color: #000; /* Define a cor de fundo do botão no modo escuro */
+        }
+        .dark-mode #dark-mode-toggle:hover {
+            background-color: #333; /* Define a cor de fundo do botão no modo escuro quando hover */
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #f4f4f9;
+        }
+        .dark-mode nav {
+            background-color: #000;
+        }
+        .dark-mode nav a {
+            color: #f4f4f9;
+        }
+        .center {
+            text-align: center; /* Centraliza o texto */
+        }
+        #clock {
+            position: absolute;
+            top: 55px;
+            right: 20px;
+            font-size: 18px;
+        }
+        #date {
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    <nav>
+        <a href="{% url 'portfolio:home' %}">Home</a>
+        <a href="{% url 'portfolio:projects' %}">Sites</a>
+        <a href="{% url 'portfolio:technologies' %}">Tecnologias</a>
+    </nav>
+    <main class="center"> <!-- Adiciona a classe center -->
+        {% block content %}{% endblock %}
+    </main>
+    <button id="dark-mode-toggle">Toggle Dark Mode</button>
+    <p id="clock"></p> <!-- Adiciona o parágrafo para mostrar o relógio -->
+    <p id="date"></p> <!-- Adiciona o parágrafo para mostrar a data -->
+    <script>
+        // Check and apply dark mode state from localStorage
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Dark mode toggle
+        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.removeItem('darkMode');
+            }
+        });
+
+        // Função para atualizar o relógio e a data
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            // Adiciona um zero à esquerda se o número for menor que 10
+            hours = padZero(hours);
+            minutes = padZero(minutes);
+            seconds = padZero(seconds);
+
+            var timeString = hours + ":" + minutes + ":" + seconds;
+            document.getElementById("clock").innerHTML = timeString;
+
+            var day = now.getDate();
+            var month = now.getMonth() + 1; // Mês começa do zero
+            var year = now.getFullYear();
+
+            var dateString = day + "/" + month + "/" + year;
+            document.getElementById("date").innerHTML = dateString;
+
+            // Atualiza a cada segundo
+            setTimeout(updateClock, 1000);
+        }
+
+        // Adiciona um zero à esquerda se o número for menor que 10
+        function padZero(number) {
+            if (number < 10) {
+                return "0" + number;
+            }
+            return number;
+        }
+
+        // Inicia o relógio ao carregar a página
+        updateClock();
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{
+  "discos": [
+    {
+      "titulo": "Led Zeppelin IV",
+      "ano_lancamento": 1971,
+      "musicas": [
+        {
+          "titulo": "Stairway to Heaven",
+          "duracao": 8.02
+        },
+        {
+          "titulo": "Rock and Roll",
+          "duracao": 3.40
+        },
+        {
+          "titulo": "Black Dog",
+          "duracao": 4.54
+        },
+        {
+          "titulo": "Going to California",
+          "duracao": 3.31
+        }
+      ]
+    },
+    {
+      "titulo": "Abbey Road",
+      "ano_lancamento": 1969,
+      "musicas": [
+        {
+          "titulo": "Come Together",
+          "duracao": 4.20
+        },
+        {
+          "titulo": "Here Comes the Sun",
+          "duracao": 3.05
+        },
+        {
+          "titulo": "Something",
+          "duracao": 3.03
+        },
+        {
+          "titulo": "Octopus's Garden",
+          "duracao": 2.51
+        }
+      ]
+    }
+  ]
+}

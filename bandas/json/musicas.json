@@ -1,0 +1,202 @@
+[
+    {
+      "banda": "Queen",
+      "titulo": "A Night at the Opera",
+      "ano_lancamento": 1975,
+      "musicas": [
+        {"titulo": "Bohemian Rhapsody", "duracao": "5:55"},
+        {"titulo": "Love of My Life", "duracao": "3:38"},
+        {"titulo": "You're My Best Friend", "duracao": "2:50"}
+      ]
+    },
+    {
+      "banda": "Led Zeppelin",
+      "titulo": "Led Zeppelin IV",
+      "ano_lancamento": 1971,
+      "musicas": [
+        {"titulo": "Stairway to Heaven", "duracao": "8:02"},
+        {"titulo": "Black Dog", "duracao": "4:54"},
+        {"titulo": "Rock and Roll", "duracao": "3:40"}
+      ]
+    },
+    {
+      "banda": "Pink Floyd",
+      "titulo": "The Dark Side of the Moon",
+      "ano_lancamento": 1973,
+      "musicas": [
+        {"titulo": "Speak to Me", "duracao": "1:07"},
+        {"titulo": "Breathe", "duracao": "2:43"},
+        {"titulo": "Time", "duracao": "6:53"}
+      ]
+    },
+    {
+      "banda": "The Rolling Stones",
+      "titulo": "Sticky Fingers",
+      "ano_lancamento": 1971,
+      "musicas": [
+        {"titulo": "Brown Sugar", "duracao": "3:49"},
+        {"titulo": "Wild Horses", "duracao": "5:42"},
+        {"titulo": "Can't You Hear Me Knocking", "duracao": "7:17"}
+      ]
+    },
+    {
+      "banda": "The Beatles",
+      "titulo": "Sgt. Pepper's Lonely Hearts Club Band",
+      "ano_lancamento": 1967,
+      "musicas": [
+        {"titulo": "Lucy in the Sky with Diamonds", "duracao": "3:28"},
+        {"titulo": "With a Little Help from My Friends", "duracao": "2:44"},
+        {"titulo": "A Day in the Life", "duracao": "5:33"}
+      ]
+    },
+    {
+      "banda": "AC/DC",
+      "titulo": "Back in Black",
+      "ano_lancamento": 1980,
+      "musicas": [
+        {"titulo": "Hells Bells", "duracao": "5:12"},
+        {"titulo": "Shoot to Thrill", "duracao": "5:17"},
+        {"titulo": "You Shook Me All Night Long", "duracao": "3:30"}
+      ]
+    },
+    {
+      "banda": "Guns N' Roses",
+      "titulo": "Appetite for Destruction",
+      "ano_lancamento": 1987,
+      "musicas": [
+        {"titulo": "Welcome to the Jungle", "duracao": "4:31"},
+        {"titulo": "Sweet Child o' Mine", "duracao": "5:55"},
+        {"titulo": "Paradise City", "duracao": "6:46"}
+      ]
+    },
+    {
+      "banda": "The Doors",
+      "titulo": "The Doors",
+      "ano_lancamento": 1967,
+      "musicas": [
+        {"titulo": "Break on Through (To the Other Side)", "duracao": "2:29"},
+        {"titulo": "Light My Fire", "duracao": "7:06"},
+        {"titulo": "The End", "duracao": "11:41"}
+      ]
+    },
+    {
+      "banda": "Nirvana",
+      "titulo": "Nevermind",
+      "ano_lancamento": 1991,
+      "musicas": [
+        {"titulo": "Smells Like Teen Spirit", "duracao": "5:01"},
+        {"titulo": "Come as You Are", "duracao": "3:38"},
+        {"titulo": "Lithium", "duracao": "4:17"}
+      ]
+    },
+    {
+      "banda": "Metallica",
+      "titulo": "Master of Puppets",
+      "ano_lancamento": 1986,
+      "musicas": [
+        {"titulo": "Battery", "duracao": "5:12"},
+        {"titulo": "Master of Puppets", "duracao": "8:35"},
+        {"titulo": "Disposable Heroes", "duracao": "8:16"}
+      ]
+    },
+    {
+      "banda": "Queen",
+      "titulo": "A Night",
+      "ano_lancamento": 1985,
+      "musicas": [
+        {"titulo": "Bohemian", "duracao": "5:30"},
+        {"titulo": "Life", "duracao": "4:30"},
+        {"titulo": "Best Friend", "duracao": "3:30"}
+      ]
+    },
+    {
+      "banda": "Led Zeppelin",
+      "titulo": "IV",
+      "ano_lancamento": 1969,
+      "musicas": [
+        {"titulo": "Heaven", "duracao": "5:00"},
+        {"titulo": "Black", "duracao": "4:24"},
+        {"titulo": "Roll", "duracao": "2:50"}
+      ]
+    },
+    {
+      "banda": "Pink Floyd",
+      "titulo": "Wall",
+      "ano_lancamento": 1980,
+      "musicas": [
+        {"titulo": "Another", "duracao": "8:59"},
+        {"titulo": "Numb", "duracao": "2:55"},
+        {"titulo": "You", "duracao": "6:50"}
+      ]
+    },
+    {
+      "banda": "The Rolling Stones",
+      "titulo": "Let",
+      "ano_lancamento": 1989,
+      "musicas": [
+        {"titulo": "Gimme", "duracao": "5:21"},
+        {"titulo": "You", "duracao": "2:44"},
+        {"titulo": "Monkey", "duracao": "4:24"}
+      ]
+    },
+    {
+      "banda": "The Beatles",
+      "titulo": "Road",
+      "ano_lancamento": 1959,
+      "musicas": [
+        {"titulo": "Together", "duracao": "3:28"},
+        {"titulo": "Yes", "duracao": "3:36"},
+        {"titulo": "Sun", "duracao": "3:55"}
+      ]
+    },
+    {
+      "banda": "AC/DC",
+      "titulo": "Hell",
+      "ano_lancamento": 1978,
+      "musicas": [
+        {"titulo": "Highway to", "duracao": "3:59"},
+        {"titulo": "Got", "duracao": "5:43"},
+        {"titulo": "Touch", "duracao": "8:14"}
+      ]
+    },
+    {
+      "banda": "Guns N' Roses",
+      "titulo": "Use I",
+      "ano_lancamento": 1988,
+      "musicas": [
+        {"titulo": "November", "duracao": "2:57"},
+        {"titulo": "Cry", "duracao": "1:55"},
+        {"titulo": "Die", "duracao": "3:54"}
+      ]
+    },
+    {
+      "banda": "The Doors",
+      "titulo": "Woman",
+      "ano_lancamento": 1975,
+      "musicas": [
+        {"titulo": "Ladly", "duracao": "4:20"},
+        {"titulo": "Rtorm", "duracao": "2:29"},
+        {"titulo": "Wasp", "duracao": "5:25"}
+      ]
+    },
+    {
+      "banda": "Nirvana",
+      "titulo": "In",
+      "ano_lancamento": 1985,
+      "musicas": [
+        {"titulo": "Box", "duracao": "4:11"},
+        {"titulo": "All", "duracao": "4:52"},
+        {"titulo": "Rape", "duracao": "8:55"}
+      ]
+    },
+    {
+      "banda": "Metallica",
+      "titulo": "All",
+      "ano_lancamento": 1981,
+      "musicas": [
+        {"titulo": "One on One", "duracao": "2:37"},
+        {"titulo": "Blackened Yes", "duracao": "3:45"},
+        {"titulo": "Sorrow", "duracao": "7:24"}
+      ]
+    }
+  ]

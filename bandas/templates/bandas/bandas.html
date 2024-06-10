@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        h1::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: #333;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        li a:hover {
+            text-decoration: underline;
+        }
+        .login {
+            text-align: right;
+        }
+        .login a {
+            color: #333;
+            font-weight: bold;
+        }
+        .actions {
+            margin-top: 20px;
+        }
+        .actions a {
+            display: inline-block;
+            margin-right: 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bandas</h1>
+        {% if user.is_authenticated %}
+            <div class="login">
+                <p>Logado como {{ user.username }}</p>
+                <form action="{% url 'bandas:logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Sair</button>
+                </form>
+            </div>
+        {% else %}
+            <div class="login">
+                <p><a href="{% url 'bandas:login' %}">Faça login</a> para continuar</p>
+            </div>
+        {% endif %}
+        <ul>
+            {% for banda in bandas %}
+                <li><a href="{% url 'bandas:banda' banda.nome|slugify %}">{{ banda.nome }}</a></li>
+            {% endfor %}
+        </ul>
+        <div class="actions">
+            {% if user.is_authenticated %}
+                <a href="{% url 'bandas:banda_adicionar' %}">Adicionar Banda</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
